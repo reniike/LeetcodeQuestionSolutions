@@ -1,6 +1,6 @@
 package dayThree;
 
-public class findUniqueNumber {
+public class FindUniqueNumber {
     public static int findFirstUnique(int[] numbers) {
         int result = 0;
         for (int i = 0; i < numbers.length; i++) {
