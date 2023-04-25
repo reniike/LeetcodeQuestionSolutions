@@ -1,7 +1,6 @@
 package daySix;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class IntersectionOfArrays {
     public static List<Integer> intersection(int[][] numbers) {
@@ -17,6 +16,7 @@ public class IntersectionOfArrays {
             }
             if (counter == 2) result.add(numbers[0][i]);
         }
+        Collections.sort(result);
         return result;
     }
 
