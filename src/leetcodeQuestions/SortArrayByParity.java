@@ -1,26 +1,31 @@
 package leetcodeQuestions;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class SortArrayByParity {
     public static int[] sortArrayByParity(int[] nums) {
-        int[] result = new int[nums.length];
-        int evenIndex = 0;
+        List<Integer> integerList = new ArrayList<>();
+        List<Integer> evenNums = new ArrayList<>();
+        List<Integer> oddNums = new ArrayList<>();
 
-        for (int num : nums) {
-            if (num % 2 == 0) {
-                result[evenIndex] = num;
-                evenIndex++;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] % 2 == 0) {
+                evenNums.add(nums[i]);
+            }
+
+            if (nums[i] % 2 != 0) {
+                oddNums.add(nums[i]);
             }
         }
+        integerList.addAll(evenNums);
+        integerList.addAll(oddNums);
 
-        for (int num : nums) {
-            if (num % 2 != 0) {
-                result[evenIndex] = num;
-                evenIndex++;
-            }
+        int[] result = new int[integerList.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = integerList.get(i);
         }
-
         return result;
     }
 
