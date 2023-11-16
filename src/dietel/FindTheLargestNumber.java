@@ -7,8 +7,8 @@ public class FindTheLargestNumber {
 
     public static int findLargestNumber(int[] numbers){
         int largest = numbers[0];
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] > largest) largest = numbers[i];
+        for (int number : numbers) {
+            if (number > largest) largest = number;
         }
         return largest;
     }
